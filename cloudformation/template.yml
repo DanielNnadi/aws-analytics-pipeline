@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Analytics Pipeline'
+
+Resources:
+  RawDataBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: analytics-raw-data
+  
+  AnalyticsDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceIdentifier: analytics-postgres
+      Engine: postgres
+      MasterUsername: admin
+      MasterUserPassword: password123
